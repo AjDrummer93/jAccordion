@@ -1,0 +1,49 @@
+.jAccordion {
+    position: relative;
+}
+
+.jacc-item {
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+    background: #DDDDDD;
+}
+
+.jacc-heading {
+    position: relative;
+    background: #DDDDDD;
+    padding: 10px 15px;
+}
+
+.jacc-heading:hover {
+    cursor: pointer;
+    background: #CCCCCC;
+}
+
+.jacc-content {
+    padding: 10px 15px;
+    background: #FAFAFA;
+    display: none;
+}
+
+.jacc-item.selected .jacc-heading {
+    background: #CCCCCC;
+}
+
+.jacc-heading::after {
+    content: '\25B6';
+    display: block;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    color: #666666;
+    transform: translateY(-50%);
+    transition: all 250ms linear;
+}
+
+.jacc-item.selected .jacc-heading::after {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: translate(0, -10px) rotate(90deg);
+}
