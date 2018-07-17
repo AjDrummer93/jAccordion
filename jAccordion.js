@@ -28,22 +28,19 @@
     Plugin.prototype = {
 
         init: function () {
-
             var self = this;
-            var accordion = this.element;
-            var activeClass = this.options.activeItemClassName;
             $(this.element).addClass('jAccordion');
 
-            var itemAlreadySelected = $('.' + activeClass, accordion);
+            var itemAlreadySelected = $('.' + this.options.activeItemClassName, this.element);
 
             if(itemAlreadySelected.length > 0) {
                 self.openItem($('.jacc-heading', itemAlreadySelected), false);
             }
 
-            $('.jacc-heading', accordion).click(function() {
+            $('.jacc-heading', this.element).click(function() {
 
-                var isItemAlreadyOpen = $(this).parent().hasClass(activeClass);
-                var anyItemsOpen = $('.' + activeClass, accordion).length > 0;
+                var isItemAlreadyOpen = $(this).parent().hasClass(this.options.activeItemClassName);
+                var anyItemsOpen = $('.' + this.options.activeItemClassName, this.element).length > 0;
                 var newItem = this;
 
                 if (isItemAlreadyOpen) {

@@ -221,3 +221,5 @@ base.js
 base.min.js
 libs.js
 libs.min.js
+
+.vscode/
